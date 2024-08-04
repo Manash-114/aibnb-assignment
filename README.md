@@ -1,9 +1,15 @@
-Configure the application properties:
+Configure the application properties
+
   spring.datasource.url=jdbc:mysql://localhost:3306/airbnbdatabase
+  
   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+  
   spring.datasource.username=root
+  
   spring.datasource.password=password
+  
   spring.jpa.show-sql=true
+  
   spring.jpa.hibernate.ddl-auto=update
 
 
