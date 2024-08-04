@@ -34,6 +34,7 @@ API Endpoints
 
 Authentication
 Signup
+
     POST /api/auth/signup
     Request Body:
     json
@@ -46,6 +47,7 @@ Signup
 }
 
 Login
+
     POST /api/auth/login
     Request Body:
     json
@@ -53,6 +55,7 @@ Login
       "username": "string",
       "password": "string"
     }
+
 
 Property Management
 
@@ -76,12 +79,16 @@ Create Property
     }
 
 Retrieve All Properties
+
     GET /api/properties
 
 
 Get Property by ID
+
     GET /api/properties/{id}
+    
 Update Property
+
     PUT /api/properties/{id}
     Request Body:
     json
@@ -101,7 +108,9 @@ Update Property
     }
     
 Delete Property
+
     DELETE /api/properties/{id}
 
 Get User’s Properties
+
     GET /api/users/{userId}/properties
