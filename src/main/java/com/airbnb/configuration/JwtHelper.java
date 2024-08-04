@@ -22,7 +22,7 @@ public class JwtHelper {
 
         String jwt = Jwts.builder().setIssuer("manashjyoti")
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(new Date().getTime()+86400000))
+                .setExpiration(new Date(new Date().getTime()+3600000))
                 .claim("username",authentication.getName())
                 .signWith(key)
                 .compact();

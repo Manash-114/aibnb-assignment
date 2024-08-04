@@ -32,7 +32,7 @@ import java.util.List;
 @Component
 public class JwtFilter extends OncePerRequestFilter {
     private HandlerExceptionResolver handlerExceptionResolver;
-
+    private Logger logger = LoggerFactory.getLogger(JwtFilter.class);
     public JwtFilter(JwtHelper jwtHelper, UserDetailsService userDetailsService, HandlerExceptionResolver handlerExceptionResolver) {
         this.handlerExceptionResolver = handlerExceptionResolver;
     }
@@ -49,6 +49,7 @@ public class JwtFilter extends OncePerRequestFilter {
                 SecretKey key = Keys.hmacShaKeyFor(JwtConstant.SECRET_KEY.getBytes());
                 Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
                 String userName = String.valueOf(claims.get("username"));
+                logger.info("user name {}",userName);
                 Authentication authentication =  new UsernamePasswordAuthenticationToken(userName,null, Collections.emptyList());
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }

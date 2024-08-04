@@ -13,6 +13,6 @@ public interface PropertiesService {
     Property getPropertyById(Long id);
     void update(PropertiesDto propertiesDto , Long id,String userName);
     void delete(Long id,String userName);
-    List<Property> getAllPropertiesByUser(Long userId);
+    List<Property> getAllPropertiesByUser(Long userId,String userName);
 
 }

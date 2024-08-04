@@ -100,8 +100,12 @@ public class PropertiesServiceImpl implements PropertiesService {
     }
 
     @Override
-    public List<Property> getAllPropertiesByUser(Long userId) {
+    public List<Property> getAllPropertiesByUser(Long userId,String userName) {
+        User byUserName = userRepository.findByUserName(userName);
         User user = userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundExcaption("User not found with id " + userId));
+
+        if(byUserName.getId()!=user.getId())
+            throw new NotAllowedException("You are not allowed to access properties");
         List<Property> byOwner = propertyRepo.findByOwner(user);
         return byOwner;
     }

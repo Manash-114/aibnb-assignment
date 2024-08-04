@@ -19,6 +19,10 @@ public class SignUp {
 
     @NotBlank(message = "Email is required")
     @Email(message = "Email should be valid")
+    @Pattern(
+            regexp = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$",
+            message = "Email should have a valid domain extension"
+    )
     private String email;
 
     @NotBlank(message = "Full name is required")
