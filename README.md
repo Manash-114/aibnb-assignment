@@ -14,7 +14,9 @@ Configure the application properties
 
 
 Airbnb Clone
+
 This project is an Airbnb-like application that allows users to register, log in, and manage property listings. 
+
 It provides authentication with JWT tokens and supports full CRUD operations for property management.
 
 Features
