@@ -77,7 +77,7 @@ public class AuthController {
         if(userDetails == null){
             throw new LoginException("user not found with username = "+username);
         } else if(!passwordEncoder.matches(password,userDetails.getPassword())){
-            throw new LoginException("invalid password");
+            throw new LoginException("invalid password try again");
         }
         return new UsernamePasswordAuthenticationToken(userDetails,null,userDetails.getAuthorities());
     }
